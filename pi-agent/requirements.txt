@@ -1,0 +1,10 @@
+pynmea2>=1.18
+pyserial>=3.5
+psutil>=5.9
+pydantic>=2.0
+websockets>=12.0
+python-dotenv>=1.0
+
+# uD3TN Python utils — install from source if PyPI version is outdated:
+#   pip install "ud3tn-utils @ git+https://gitlab.com/d3tn/ud3tn.git#subdirectory=python-ud3tn-utils"
+# The built-in dtn_adapter.py (AAPv1Client) is used by default; no package required.

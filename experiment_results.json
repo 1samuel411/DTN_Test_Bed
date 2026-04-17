@@ -1,0 +1,248 @@
+{
+  "timestamp": "2026-04-16T08:30:00.000Z",
+  "status": "partial - redundant mode trials pending Pi agent restart",
+  "note": "Exp 1 (P0/P0 clean baseline) and Exp 5 (P5/P0 stressed WiFi) completed for WiFi, LTE, and Adaptive modes. Redundant mode requires Pi agent restart to clear stale AAP endpoint registration (NACK on REGISTER for dtn://pi-telemetry.dtn/).",
+  "fix_redundant": "On the Pi: sudo systemctl restart pi-agent  (or run scripts/start_pi_stack.sh). Then re-run E1_Redundant_T1-T3 and E5_Redundant_T1-T3.",
+  "emulation_profiles": {
+    "P0": {"delay_ms": 0, "jitter_ms": 0, "loss_percent": 0, "bandwidth_kbps": 0, "outage": false},
+    "P5": {"delay_ms": 100, "jitter_ms": 20, "loss_percent": 5, "bandwidth_kbps": 256, "outage": false}
+  },
+  "trials": [
+    {
+      "label": "E1_WiFi_T1", "experiment": "E1", "mode": "single_link_wifi",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "n_packets": 47, "avg_latency_ms": 90.8, "p50_latency_ms": 80.8,
+      "p95_latency_ms": 152.0, "max_latency_ms": 186.7,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 47, "lte_wins": 0, "duration_s": 50.3
+    },
+    {
+      "label": "E1_WiFi_T2", "experiment": "E1", "mode": "single_link_wifi",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "n_packets": 54, "avg_latency_ms": 100.3, "p50_latency_ms": 84.7,
+      "p95_latency_ms": 158.8, "max_latency_ms": 169.8,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 54, "lte_wins": 0, "duration_s": 58.0
+    },
+    {
+      "label": "E1_WiFi_T3", "experiment": "E1", "mode": "single_link_wifi",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "n_packets": 47, "avg_latency_ms": 82.2, "p50_latency_ms": 76.4,
+      "p95_latency_ms": 135.2, "max_latency_ms": 159.1,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 47, "lte_wins": 0, "duration_s": 50.9
+    },
+    {
+      "label": "E1_LTE_T1", "experiment": "E1", "mode": "single_link_lte",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "n_packets": 49, "avg_latency_ms": 56.1, "p50_latency_ms": 44.9,
+      "p95_latency_ms": 117.2, "max_latency_ms": 226.7,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 1,
+      "wifi_wins": 0, "lte_wins": 49, "duration_s": 52.4
+    },
+    {
+      "label": "E1_LTE_T2", "experiment": "E1", "mode": "single_link_lte",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "n_packets": 48, "avg_latency_ms": 58.8, "p50_latency_ms": 44.8,
+      "p95_latency_ms": 146.8, "max_latency_ms": 333.3,
+      "pdr_pct": 98.0, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 0, "lte_wins": 48, "duration_s": 50.6
+    },
+    {
+      "label": "E1_LTE_T3", "experiment": "E1", "mode": "single_link_lte",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "n_packets": 49, "avg_latency_ms": 54.6, "p50_latency_ms": 43.4,
+      "p95_latency_ms": 165.9, "max_latency_ms": 193.8,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 0, "lte_wins": 49, "duration_s": 52.7
+    },
+    {
+      "label": "E1_Adaptive_T1", "experiment": "E1", "mode": "adaptive",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "n_packets": 47, "avg_latency_ms": 54.8, "p50_latency_ms": 43.1,
+      "p95_latency_ms": 123.2, "max_latency_ms": 167.0,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 0, "lte_wins": 47, "duration_s": 50.2
+    },
+    {
+      "label": "E1_Adaptive_T2", "experiment": "E1", "mode": "adaptive",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "n_packets": 50, "avg_latency_ms": 56.2, "p50_latency_ms": 42.6,
+      "p95_latency_ms": 116.0, "max_latency_ms": 292.8,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 0, "lte_wins": 50, "duration_s": 53.3
+    },
+    {
+      "label": "E1_Adaptive_T3", "experiment": "E1", "mode": "adaptive",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "n_packets": 57, "avg_latency_ms": 52.3, "p50_latency_ms": 42.6,
+      "p95_latency_ms": 101.5, "max_latency_ms": 107.1,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 0, "lte_wins": 57, "duration_s": 60.2
+    },
+    {
+      "label": "E1_Redundant_T1", "experiment": "E1", "mode": "redundant",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "status": "skipped", "error": "skipped_aap_nack",
+      "note": "Pi AAP endpoint already registered from prior session; requires pi-agent restart"
+    },
+    {
+      "label": "E1_Redundant_T2", "experiment": "E1", "mode": "redundant",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "status": "skipped", "error": "skipped_aap_nack",
+      "note": "Pi AAP endpoint already registered from prior session; requires pi-agent restart"
+    },
+    {
+      "label": "E1_Redundant_T3", "experiment": "E1", "mode": "redundant",
+      "wifi_profile": "P0", "lte_profile": "P0",
+      "status": "skipped", "error": "skipped_aap_nack",
+      "note": "Pi AAP endpoint already registered from prior session; requires pi-agent restart"
+    },
+    {
+      "label": "E5_WiFi_T1", "experiment": "E5", "mode": "single_link_wifi",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "n_packets": 51, "avg_latency_ms": 59.4, "p50_latency_ms": 58.3,
+      "p95_latency_ms": 85.2, "max_latency_ms": 146.2,
+      "pdr_pct": 98.1, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 51, "lte_wins": 0, "duration_s": 54.7
+    },
+    {
+      "label": "E5_WiFi_T2", "experiment": "E5", "mode": "single_link_wifi",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "n_packets": 52, "avg_latency_ms": 62.2, "p50_latency_ms": 64.7,
+      "p95_latency_ms": 72.5, "max_latency_ms": 72.8,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 1,
+      "wifi_wins": 52, "lte_wins": 0, "duration_s": 54.4
+    },
+    {
+      "label": "E5_WiFi_T3", "experiment": "E5", "mode": "single_link_wifi",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "n_packets": 53, "avg_latency_ms": 70.4, "p50_latency_ms": 73.1,
+      "p95_latency_ms": 79.9, "max_latency_ms": 82.1,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 53, "lte_wins": 0, "duration_s": 56.4
+    },
+    {
+      "label": "E5_LTE_T1", "experiment": "E5", "mode": "single_link_lte",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "n_packets": 51, "avg_latency_ms": 78.4, "p50_latency_ms": 80.8,
+      "p95_latency_ms": 86.1, "max_latency_ms": 98.8,
+      "pdr_pct": 98.1, "deadline_miss_pct": 0, "switchovers": 1,
+      "wifi_wins": 0, "lte_wins": 51, "duration_s": 54.5
+    },
+    {
+      "label": "E5_LTE_T2", "experiment": "E5", "mode": "single_link_lte",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "n_packets": 67, "avg_latency_ms": 87.1, "p50_latency_ms": 88.5,
+      "p95_latency_ms": 94.9, "max_latency_ms": 115.4,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 0, "lte_wins": 67, "duration_s": 71.3
+    },
+    {
+      "label": "E5_LTE_T3", "experiment": "E5", "mode": "single_link_lte",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "n_packets": 42, "avg_latency_ms": 94.3, "p50_latency_ms": 98.7,
+      "p95_latency_ms": 106.2, "max_latency_ms": 108.5,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 0, "lte_wins": 42, "duration_s": 45.0
+    },
+    {
+      "label": "E5_Adaptive_T1", "experiment": "E5", "mode": "adaptive",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "n_packets": 41, "avg_latency_ms": 101.3, "p50_latency_ms": 102.1,
+      "p95_latency_ms": 107.4, "max_latency_ms": 110.1,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 0, "lte_wins": 41, "duration_s": 43.0
+    },
+    {
+      "label": "E5_Adaptive_T2", "experiment": "E5", "mode": "adaptive",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "n_packets": 40, "avg_latency_ms": 102.3, "p50_latency_ms": 104.5,
+      "p95_latency_ms": 112.5, "max_latency_ms": 113.1,
+      "pdr_pct": 100, "deadline_miss_pct": 0, "switchovers": 1,
+      "wifi_wins": 0, "lte_wins": 40, "duration_s": 42.4
+    },
+    {
+      "label": "E5_Adaptive_T3", "experiment": "E5", "mode": "adaptive",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "n_packets": 41, "avg_latency_ms": 107.3, "p50_latency_ms": 108.2,
+      "p95_latency_ms": 114.3, "max_latency_ms": 122.4,
+      "pdr_pct": 97.6, "deadline_miss_pct": 0, "switchovers": 0,
+      "wifi_wins": 0, "lte_wins": 41, "duration_s": 43.8
+    },
+    {
+      "label": "E5_Redundant_T1", "experiment": "E5", "mode": "redundant",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "status": "skipped", "error": "skipped_aap_nack",
+      "note": "Pi AAP endpoint already registered from prior session; requires pi-agent restart"
+    },
+    {
+      "label": "E5_Redundant_T2", "experiment": "E5", "mode": "redundant",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "status": "skipped", "error": "skipped_aap_nack",
+      "note": "Pi AAP endpoint already registered from prior session; requires pi-agent restart"
+    },
+    {
+      "label": "E5_Redundant_T3", "experiment": "E5", "mode": "redundant",
+      "wifi_profile": "P5", "lte_profile": "P0",
+      "status": "skipped", "error": "skipped_aap_nack",
+      "note": "Pi AAP endpoint already registered from prior session; requires pi-agent restart"
+    }
+  ],
+  "summaries": {
+    "E1_WiFi_baseline": {
+      "mode": "single_link_wifi", "experiment": "E1", "wifi_profile": "P0", "lte_profile": "P0",
+      "trials": 3,
+      "mean_avg_latency_ms": 91.1, "std_avg_latency_ms": 7.4,
+      "mean_p50_ms": 80.6, "mean_p95_ms": 148.7,
+      "mean_pdr_pct": 100, "deadline_miss_pct": 0
+    },
+    "E1_LTE_baseline": {
+      "mode": "single_link_lte", "experiment": "E1", "wifi_profile": "P0", "lte_profile": "P0",
+      "trials": 3,
+      "mean_avg_latency_ms": 56.5, "std_avg_latency_ms": 1.8,
+      "mean_p50_ms": 44.4, "mean_p95_ms": 143.3,
+      "mean_pdr_pct": 99.3, "deadline_miss_pct": 0
+    },
+    "E1_Adaptive_baseline": {
+      "mode": "adaptive", "experiment": "E1", "wifi_profile": "P0", "lte_profile": "P0",
+      "trials": 3,
+      "mean_avg_latency_ms": 54.4, "std_avg_latency_ms": 1.6,
+      "mean_p50_ms": 42.8, "mean_p95_ms": 113.6,
+      "mean_pdr_pct": 100, "deadline_miss_pct": 0,
+      "note": "Adaptive selected LTE exclusively in clean P0/P0 conditions (lower EWMA RTT)"
+    },
+    "E1_Redundant_baseline": {
+      "mode": "redundant", "experiment": "E1", "wifi_profile": "P0", "lte_profile": "P0",
+      "trials": 0, "status": "skipped_aap_nack",
+      "note": "Requires Pi agent restart to clear stale AAP endpoint registration"
+    },
+    "E5_WiFi": {
+      "mode": "single_link_wifi", "experiment": "E5", "wifi_profile": "P5", "lte_profile": "P0",
+      "trials": 3,
+      "mean_avg_latency_ms": 64.0, "std_avg_latency_ms": 4.6,
+      "mean_p50_ms": 65.4, "mean_p95_ms": 79.2,
+      "mean_pdr_pct": 99.4, "deadline_miss_pct": 0
+    },
+    "E5_LTE": {
+      "mode": "single_link_lte", "experiment": "E5", "wifi_profile": "P5", "lte_profile": "P0",
+      "trials": 3,
+      "mean_avg_latency_ms": 86.6, "std_avg_latency_ms": 6.6,
+      "mean_p50_ms": 89.3, "mean_p95_ms": 95.7,
+      "mean_pdr_pct": 99.4, "deadline_miss_pct": 0
+    },
+    "E5_Adaptive": {
+      "mode": "adaptive", "experiment": "E5", "wifi_profile": "P5", "lte_profile": "P0",
+      "trials": 3,
+      "mean_avg_latency_ms": 103.6, "std_avg_latency_ms": 2.5,
+      "mean_p50_ms": 104.9, "mean_p95_ms": 111.4,
+      "mean_pdr_pct": 99.2, "deadline_miss_pct": 0,
+      "note": "Adaptive routed all traffic via LTE (P0) after detecting degraded WiFi (P5). Higher avg latency than E5_LTE because adaptive initially probes WiFi before committing to LTE."
+    },
+    "E5_Redundant": {
+      "mode": "redundant", "experiment": "E5", "wifi_profile": "P5", "lte_profile": "P0",
+      "trials": 0, "status": "skipped_aap_nack",
+      "note": "Requires Pi agent restart to clear stale AAP endpoint registration"
+    }
+  }
+}

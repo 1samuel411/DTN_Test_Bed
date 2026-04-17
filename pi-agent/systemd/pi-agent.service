@@ -1,0 +1,22 @@
+[Unit]
+Description=Pi DTN Telemetry Agent
+After=ud3tn-pi.service network.target
+Requires=ud3tn-pi.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/pi-agent
+EnvironmentFile=/opt/pi-agent/.env
+ExecStart=/usr/bin/python3 /opt/pi-agent/main.py
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pi-agent
+
+# Required for SO_BINDTODEVICE in link_manager
+AmbientCapabilities=CAP_NET_RAW CAP_NET_ADMIN
+
+[Install]
+WantedBy=multi-user.target

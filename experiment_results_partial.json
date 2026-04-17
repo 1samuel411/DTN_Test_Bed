@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-04-16T07:52:21.600Z",
+  "status": "partial - Pi management connection unavailable",
+  "note": "Only single_link_wifi mode available. Mode/emulation switching requires Pi WebSocket at ws://10.0.0.1:8765/pi (Config Server on Ethernet interface). The Pi's data plane (DTN bundles via ud3tn) is connected and packets are flowing, but the Pi management client has not connected to the Config Server.",
+  "fix": "On the Pi, ensure the pi-agent is running and its mgmt_client is connecting to ws://10.0.0.1:8765/pi. Check: systemctl status pi-agent or run scripts/start_pi_stack.sh",
+  "completed_trials": [
+    {
+      "label": "E1_WiFi_T1",
+      "mode": "single_link_wifi",
+      "wifi_profile": "P0",
+      "lte_profile": "P0",
+      "n_packets": 47,
+      "avg_latency_ms": 90.8,
+      "p50_latency_ms": 80.8,
+      "p95_latency_ms": 152.0,
+      "max_latency_ms": 186.7,
+      "deadline_miss_pct": 0,
+      "switchovers": 0,
+      "wifi_wins": 47,
+      "lte_wins": 0,
+      "duration_s": 50.3
+    },
+    {
+      "label": "E1_WiFi_T2",
+      "mode": "single_link_wifi",
+      "wifi_profile": "P0",
+      "lte_profile": "P0",
+      "n_packets": 54,
+      "avg_latency_ms": 100.3,
+      "p50_latency_ms": 84.7,
+      "p95_latency_ms": 158.8,
+      "max_latency_ms": 169.8,
+      "deadline_miss_pct": 0,
+      "switchovers": 0,
+      "wifi_wins": 54,
+      "lte_wins": 0,
+      "duration_s": 58.0
+    },
+    {
+      "label": "E1_WiFi_T3",
+      "mode": "single_link_wifi",
+      "wifi_profile": "P0",
+      "lte_profile": "P0",
+      "n_packets": 47,
+      "avg_latency_ms": 82.2,
+      "p50_latency_ms": 76.4,
+      "p95_latency_ms": 135.2,
+      "max_latency_ms": 159.1,
+      "deadline_miss_pct": 0,
+      "switchovers": 0,
+      "wifi_wins": 47,
+      "lte_wins": 0,
+      "duration_s": 50.9
+    }
+  ],
+  "summary": {
+    "E1_WiFi_baseline": {
+      "trials": 3,
+      "mean_avg_latency_ms": 91.1,
+      "std_avg_latency_ms": 7.4,
+      "mean_p50_ms": 80.6,
+      "mean_p95_ms": 148.7,
+      "deadline_miss_pct": 0,
+      "all_packets_on_wifi": true
+    }
+  }
+}

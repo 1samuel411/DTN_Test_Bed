@@ -1,0 +1,22 @@
+[Unit]
+Description=uD3TN DTN node (Pi)
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/ud3tn
+ExecStart=/opt/ud3tn/ud3tn \
+    --eid "dtn://pi-telemetry.dtn/" \
+    --bp-version 7 \
+    --aap-socket /tmp/ud3tn.socket \
+    --cla "mtcp:0.0.0.0:4224"
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ud3tn-pi
+
+[Install]
+WantedBy=multi-user.target

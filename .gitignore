@@ -1,0 +1,34 @@
+# OS artifacts
+.DS_Store
+
+# Local runtime artifacts
+.run/
+
+.claude/
+
+# Node / npm artifacts
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/.npm/
+**/.pnpm-store/
+**/.expo/
+
+# Package manager lockfiles generated locally (not tracked here)
+**/package-lock.json
+
+# Common JS build outputs
+**/.next/
+**/dist/
+**/build/
+
+# Python local artifacts
+**/__pycache__/
+**/pycache/
+**/*.py[cod]
+**/.venv/
+
+# External dependencies and submodule-style vendor checkouts
+third_party/

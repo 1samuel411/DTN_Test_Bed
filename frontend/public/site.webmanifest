@@ -1,0 +1,23 @@
+{
+  "name": "DTN Testbed",
+  "short_name": "DTN Testbed",
+  "description": "Delay-tolerant networking testbed control surface",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020203",
+  "theme_color": "#020203",
+  "icons": [
+    {
+      "src": "/dual-channel-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/dual-channel-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
